@@ -39,12 +39,12 @@ app.post('/birds', function(req,res){
   var bird = req.body
   // bird.createdAt = new Date();
   console.log(req.body)
-  geocoder.geocode('New York, NY', function (err, data){
   db.collection('birds').insert(bird,function(err, results){
     res.json(results)
     console.log(bird)  
-  })
-  })
+  })geocoder.geocode('New York, NY', function (err, data){
+    
+    })
 })
 
 
